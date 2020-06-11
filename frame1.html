@@ -1,0 +1,65 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>JMS Test Tool</title>
+<script language="JavaScript" type="text/javascript">
+	function submitForm(reqType) {
+			if (reqType=='Get') {
+				document.forms[0].hReqType.value = "Get";
+			} else {
+				document.forms[0].hReqType.value = "Put";
+			}
+			
+			document.forms[0].submit();
+		}
+</script>
+</head>
+<body>
+<form action="/JMSTester/MessageProcessor/" method="post"
+	enctype="application/x-www-form-urlencoded" target="frame3">
+<div align="center">
+<table border="0" width="100%">
+		<tr>
+			<td align="center" valign="middle" nowrap colspan="2">
+
+			<h3><font size="4" color="#0080ff" face="Verdana"><b>JMS
+			Test Tool</b></font><font size="2" color="#000000" face="Verdana"></font></h3>
+			</td>
+		</tr>
+		<tr>
+			<td align="left" valign="top" nowrap><b><font color="#000000"
+			size="2" face="Verdana">Queue Connection Factory</font>:</b></td>
+			<td align="left" valign="top" nowrap><font color="#000000"
+				size="2" face="Verdana"><input type="text" name="txtQCF"
+				size="30" value="jms/QCF"><font color="silver" size="2"
+				face="Verdana"><b> </b></font><font color="gray" size="2"
+				face="Verdana">(Use JNDI Name)</font></font></td>
+
+		</tr>
+		<tr>
+			<td align="left" valign="top" nowrap><b><font color="#000000"
+			size="2" face="Verdana">Queue Destination</font>:</b></td>
+			<td align="left" valign="top" nowrap><font color="#000000"
+				size="2" face="Verdana"><input type="text" name="txtQueue"
+				size="30" value="jms/Queue"></font><font color="gray" size="2"
+				face="Verdana">(Use JNDI Name)</font></td>
+
+		</tr>
+		<tr>
+			<td align="left" valign="top" nowrap><font color="#000000"
+				size="2" face="Verdana"><b> Text:</b></font></td>
+			<td align="left" valign="top"><font size="2" color="#000000"
+				face="Verdana"><textarea rows="4" cols="60" name="txtMessage">Test Message</textarea></font></td>
+		</tr>
+		<tr>
+			<td colspan="2" align="center" valign="middle" nowrap><input
+				type="hidden" name="hReqType" value="Put"></td>
+		</tr>
+</table>
+<font size="2" color="#000000" face="Verdana"><input type="button" name="btnPutMessage" value="Put Message"
+	onclick="JavaScript: submitForm('Put');"> <input
+	type="button" name="btnGetMessage" value="Get message"
+	onclick="JavaScript: submitForm('Get');"></font></div>
+</form>
+</body>
+</html>
